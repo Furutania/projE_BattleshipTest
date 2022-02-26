@@ -9,8 +9,8 @@ package com.example.proje_battleshiptest;
  * @author Tyler Santos
  * @version Spring 2022 - 2/22/22
  */
-public class GameBoard extends com.example.cs301_battleship.Coordinates {
-    private com.example.cs301_battleship.Coordinates currentBoard[][] = new com.example.cs301_battleship.Coordinates[10][10];
+public class GameBoard extends com.example.proje_battleshiptest.Coordinates {
+    private com.example.proje_battleshiptest.Coordinates currentBoard[][] = new com.example.proje_battleshiptest.Coordinates[10][10];
 
     /**
      * Default constructor for the board
@@ -22,7 +22,7 @@ public class GameBoard extends com.example.cs301_battleship.Coordinates {
         int i,j;
         for (i = 1; i <= 10; i++){
             for(j = 1; i <= 10; j++){
-                this.currentBoard[i][j] = new com.example.cs301_battleship.Coordinates(false, false, i, j);
+                this.currentBoard[i][j] = new com.example.proje_battleshiptest.Coordinates(false, false, i, j);
             }
         }
     }
@@ -38,7 +38,7 @@ public class GameBoard extends com.example.cs301_battleship.Coordinates {
         int i,j;
         for (i = 1; i <= 10; i++){
             for(j = 1; i <= 10; j++){
-                this.currentBoard[i][j] = new com.example.cs301_battleship.Coordinates(orig.currentBoard[i][j]);
+                this.currentBoard[i][j] = new com.example.proje_battleshiptest.Coordinates(orig.currentBoard[i][j]);
             }
         }
     }
