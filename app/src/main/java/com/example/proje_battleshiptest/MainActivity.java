@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
                 //Makes second instance of game state and makes a deep copy of it
 
                 //Calls toString on both gameStates
+                firstInstance.toString();
+                secondInstance.toString();
 
             }
         };
