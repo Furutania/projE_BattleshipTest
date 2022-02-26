@@ -31,10 +31,11 @@ public class MainActivity extends AppCompatActivity {
                 //Calls each method once
 
                 //Makes second instance of game state and makes a deep copy of it
-
+                BattleShipGameState secondInstance = new BattleShipGameState();
+                BattleShipGameState secondDeepCopy = new BattleShipGameState(secondInstance);
                 //Calls toString on both gameStates
-                firstInstance.toString();
-                secondInstance.toString();
+                firstDeepCopy.toString();
+                secondDeepCopy.toString();
 
             }
         };
