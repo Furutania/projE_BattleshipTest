@@ -1,5 +1,7 @@
 package com.example.proje_battleshiptest;
 
+import androidx.appcompat.widget.AppCompatRadioButton$InspectionCompanion;
+
 /**
  * BattleShipGameState - Contains the state of a BattleShipGame. Sent by the game
  * when a play wants to enquire about the state of the game.
@@ -21,15 +23,27 @@ public class BattleShipGameState {
     private BattleshipObj[][] playersFleet = new BattleshipObj[playerID.length][6];
 
 
+    public BattleShipGameState(){
+        this.playerID = new int[]{0,1};
+        this.playersBoard = new GameBoard();
+        int num = (int) Math.random() * 1;
+        this.playersTurn = num;
+        this.timer = 30;
+        this.remainingShips = 6;
+        this.playersFleet = new BattleshipObj[playerID.length][6];
+    }
+
+
     // basic constructor
     public BattleShipGameState(int[] playerID, GameBoard playersBoard, int playersTurn, int timer,
-                               int phase, int remainingShips) {
+                               int phase, int remainingShips, BattleshipObj[][] playersFleet) {
         this.playerID = playerID;
         this.playersBoard = playersBoard;
         this.playersTurn = playersTurn;
         this.timer = timer;
         this.phase = phase;
         this.remainingShips = remainingShips;
+        this.playersFleet = playersFleet;
     }
 
     // deep copy constructor
