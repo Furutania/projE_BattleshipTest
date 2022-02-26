@@ -73,20 +73,46 @@ public class BattleShipGameState {
         }
         else {
             this.playersBoard.setCoordHit(row, col, true);
+            this.printFire(row, col, true);
             return true;
         }
     }
 
     //Checks to see if the coordinates the player has picked are in bounds of board and a ship isn't already placed there
-    public void placeShip(BattleshipObj ship, Coordinates[] toPlace) {
+    public boolean placeShip(BattleshipObj ship, Coordinates[] toPlace) {
         int i;
         for (i = 0; i < toPlace.length; i++) {
             if (toPlace[i].getHasShip() == false &&
                     toPlace[i].getX() <= 10 && toPlace[i].getY() <= 10 &&
                     toPlace[i].getX() >= 1 && toPlace[i].getY() >= 1) {
                 ship.setLocation(toPlace);
+                this.printPlaceShip(toPlace, true);
+                return true;
             }
         }
+        return false;
+    }
+
+    public String printFire(int row, int col, boolean canFire) {
+        char[] letters = "abcdefghij".toCharArray();
+        if(canFire == true) {
+            char rowLetter = letters[row];
+            return playerID + " fired at x: " + row + " & y: " + col + ".";
+        }
+        return "Error";
+    }
+
+    public String printPlaceShip(Coordinates[] coords, boolean canPlaceShip) {
+        char[] letters = "abcdefghij".toCharArray();
+        if(canPlaceShip == true) {
+            for(int i = 0; i < coords.length; ++i) {
+                int row = coords[i].getX();
+                int col = coords[i].getY();
+                char rowLetter = letters[row];
+                return playerID + " placed a ship at x: " + rowLetter + " & y: " + col + ".";
+            }
+        }
+        return "Error";
     }
 
     @Override

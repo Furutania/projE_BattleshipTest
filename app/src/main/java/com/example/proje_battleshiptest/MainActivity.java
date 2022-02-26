@@ -24,6 +24,15 @@ public class MainActivity extends AppCompatActivity {
                 //Clears Text
                 multiLine.setText("");
 
+                //instance variables
+                Coordinates[] coords = new Coordinates[5];
+                for (int i = 1; i < 6; ++i)  {
+                    coords[i - 1].setX(i);
+                    coords[i - 1].setY(1);
+                }
+
+                BattleshipObj battleship = new BattleshipObj(5, coords);
+
                 //Calls default constructor to make first instance of game state and makes a deep copy of it
                 BattleShipGameState firstInstance = new BattleShipGameState();
                 BattleShipGameState firstDeepCopy = new BattleShipGameState(firstInstance);
@@ -36,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
                 firstInstance.toString();
                 secondInstance.toString();
 
+                //Calls methods on firstInstance
+                firstInstance.canFire(4, 6);
+                firstInstance.placeShip(battleship, coords);
             }
         };
 
