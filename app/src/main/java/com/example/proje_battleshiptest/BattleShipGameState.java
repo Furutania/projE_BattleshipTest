@@ -54,6 +54,14 @@ public class BattleShipGameState {
         this.timer = copy.timer;
         this.phase = copy.phase;
         this.remainingShips = copy.remainingShips;
+
+        int i;
+        int j;
+        for (i = 0; i < 6; i++) {
+            for (j = 0; j < playerID.length; j++) {
+                this.playersFleet[i][j] = new BattleshipObj( copy.playersFleet[i][j]);
+            }
+        }
     }
 
     // if true, then player can fire and will set coordinate as if it were hit. if false,
