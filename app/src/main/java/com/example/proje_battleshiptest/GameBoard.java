@@ -11,7 +11,7 @@ package com.example.proje_battleshiptest;
  */
 public class GameBoard extends com.example.proje_battleshiptest.Coordinates {
     private com.example.proje_battleshiptest.Coordinates currentBoard[][] = new com.example.proje_battleshiptest.Coordinates[10][10];
-//
+
     /**
      * Default constructor for the board
      * initerates through the 2d array assigning each one
