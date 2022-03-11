@@ -94,7 +94,7 @@ public class BattleShipGameState {
     }
 
     public String printFire(int row, int col, boolean canFire) {
-        char[] letters = "abcdefghij".toCharArray();
+        char[] letters = "ABCDEFGHIJ".toCharArray();
         if(canFire == true) {
             char rowLetter = letters[row];
             return playerID + " fired at x: " + row + " & y: " + col + ".";
@@ -103,7 +103,7 @@ public class BattleShipGameState {
     }
 
     public String printPlaceShip(Coordinates[] coords, boolean canPlaceShip) {
-        char[] letters = "abcdefghij".toCharArray();
+        char[] letters = "ABCDEFGHIJ".toCharArray();
         if(canPlaceShip == true) {
             for(int i = 0; i < coords.length; ++i) {
                 int row = coords[i].getX();
