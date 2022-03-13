@@ -1,4 +1,7 @@
 package com.example.proje_battleshiptest;
+
+import android.util.Log;
+
 /**
  * board - Contains a 2d array of coordinates, each coordinate has two booleans
  * hit and hasShip from.
@@ -9,8 +12,8 @@ package com.example.proje_battleshiptest;
  * @author Tyler Santos
  * @version Spring 2022 - 2/22/22
  */
-public class GameBoard extends com.example.proje_battleshiptest.Coordinates {
-    private com.example.proje_battleshiptest.Coordinates currentBoard[][] = new com.example.proje_battleshiptest.Coordinates[10][10];
+public class GameBoard extends Coordinates {
+    private Coordinates currentBoard[][];
 
     /**
      * Default constructor for the board
@@ -20,9 +23,10 @@ public class GameBoard extends com.example.proje_battleshiptest.Coordinates {
      */
     public GameBoard(){
         int i,j;
-        for (i = 1; i <= 10; i++){
-            for(j = 1; i <= 10; j++){
-                this.currentBoard[i][j] = new com.example.proje_battleshiptest.Coordinates(false, false, i, j);
+        this.currentBoard = new Coordinates[10][10];
+        for (i = 0; i < 10; i++)  {
+            for(j = 0; j < 10; j++){
+                this.currentBoard[i][j] = new Coordinates(false, false, i + 1, j + 1);
             }
         }
     }
@@ -36,11 +40,14 @@ public class GameBoard extends com.example.proje_battleshiptest.Coordinates {
      */
     public GameBoard(GameBoard orig){ //copy constructor
         int i,j;
-        for (i = 1; i <= 10; i++){
-            for(j = 1; i <= 10; j++){
-                this.currentBoard[i][j] = new com.example.proje_battleshiptest.Coordinates(orig.currentBoard[i][j]);
+        this.currentBoard = new Coordinates[10][10];
+        for (i = 0; i < 10; i++){
+            for(j = 0; j < 10; j++){
+                Log.i("COPY", "GameBoard: " + i + " " + j);
+                this.currentBoard[i][j] = new Coordinates(orig.currentBoard[i][j]);
             }
         }
+        Log.i("DONE", "DONE");
     }
 
     /**

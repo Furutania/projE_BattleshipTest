@@ -1,5 +1,7 @@
 package com.example.proje_battleshiptest;
 
+import android.util.Log;
+
 /**
  * BattleshipObj
  * Creates a battleship object, storing its location, its size, and if its been sunk
@@ -14,15 +16,16 @@ package com.example.proje_battleshiptest;
 public class BattleshipObj {
     private int size;
     private boolean sunk;
-    private Coordinates[] location = new Coordinates[size];
+    private Coordinates[] location;
 
     public BattleshipObj(int size, Coordinates[] location){
         this.size = size;
         this.sunk = false;
-
-
+        this.location = new Coordinates[size];
+        Log.i("in battleship", "BEFORE LOOP");
         int i;
         for(i = 0; i < location.length; i++){
+            Log.i("in battleship", "" + i);
             this.location[i] = new Coordinates(location[i]);
         }
     }
@@ -31,9 +34,11 @@ public class BattleshipObj {
         this.size = orig.size;
         this.sunk = orig.sunk;
 
-
         int i;
-        for(i = 0; i < location.length; i++){
+        Log.i("in BSOBJ", "BattleshipObj: ");
+        this.location = new Coordinates[orig.location.length];
+        for(i = 0; i < orig.location.length; i++){
+            Log.i("in BSOBJ", "BattleshipObj: " + i);
             this.location[i] = new Coordinates(orig.location[i]);
         }
     }
