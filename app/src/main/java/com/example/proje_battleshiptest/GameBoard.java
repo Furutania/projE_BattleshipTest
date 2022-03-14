@@ -13,10 +13,10 @@ import android.util.Log;
  * @version Spring 2022 - 2/22/22
  */
 public class GameBoard extends Coordinates {
-    private Coordinates currentBoard[][];
+    private Coordinates currentBoard[][]; //a Coordinate array representing the board
 
     /**
-     * Default constructor for the board
+     * GameBoard - Default constructor for the board
      * initerates through the 2d array assigning each one
      * coordinate object with two false values one for hit(if the coordinate has been fired at)
      * and one for hasShip(Identifying if the coordinate houses a ship)
@@ -33,10 +33,10 @@ public class GameBoard extends Coordinates {
 
 
     /**
-     * Copy constructor for the Board object
+     * GameBoard - Copy constructor for the Board object
      * iterates through the list assigning each coordinate with
      * a copy of the originals coordinate values
-     * @param orig
+     * @param orig - a copy of the original GameBoard
      */
     public GameBoard(GameBoard orig){ //copy constructor
         int i,j;
@@ -51,10 +51,10 @@ public class GameBoard extends Coordinates {
     }
 
     /**
-     * Sets the coordinate of row, col to be hit or not hit
-     * @param row
-     * @param col
-     * @param hit
+     * setCoordHit - Sets the coordinate of row, col to be hit or not hit
+     * @param row - a given row coord
+     * @param col - a given column coord
+     * @param hit - whether the ship has been hit or not
      */
  public boolean setCoordHit(int row, int col, boolean hit){
      if(getCoordHit(row, col) == false) {
@@ -66,8 +66,8 @@ public class GameBoard extends Coordinates {
 
     /**
      * Checks if the coordinate values passed in has been hit
-     * @param row
-     * @param col
+     * @param row - a given row coord
+     * @param col - a given column coord
      * @return bool, if the coordinate has been hit
      */
  public boolean getCoordHit(int row, int col){

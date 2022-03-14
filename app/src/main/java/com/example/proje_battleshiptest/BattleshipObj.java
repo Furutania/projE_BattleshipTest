@@ -12,12 +12,19 @@ import android.util.Log;
  * @author Tyler Santos
  * @version Spring 2022 - 2/22/22
  */
-//hi
-public class BattleshipObj {
-    private int size;
-    private boolean sunk;
-    private Coordinates[] location;
 
+
+public class BattleshipObj {
+    private int size; //the size of this battleship
+    private boolean sunk; //boolean that states whether this battleship has been sunk
+    private Coordinates[] location; //the location of this battleship
+
+    /**
+     * BattleshipObj - Basic constructor that initializes the instance variables with
+     * arguments.
+     * @param size - the size of the ship
+     * @param location - the location of the ship on the board
+     */
     public BattleshipObj(int size, Coordinates[] location){
         this.size = size;
         this.sunk = false;
@@ -30,6 +37,10 @@ public class BattleshipObj {
         }
     }
 
+    /**
+     * BattleshipObj - A copy constructor of a BattleshipObj
+     * @param orig
+     */
     public BattleshipObj(BattleshipObj orig){
         this.size = orig.size;
         this.sunk = orig.sunk;
@@ -43,6 +54,11 @@ public class BattleshipObj {
         }
     }
 
+    /**
+     * checkIfSunk - Checks if this battleship has been sunk
+     * @param ship - a given battleship
+     * @return true or false depending on whether a battleship has been hit
+     */
     public boolean checkIfSunk(BattleshipObj ship){
         int i;
         for(i = 0; i < location.length; i++){

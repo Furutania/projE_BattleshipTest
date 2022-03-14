@@ -10,10 +10,10 @@ package com.example.proje_battleshiptest;
  * @version Spring 2022 - 2/22/22
  */
 public class Coordinates {
-    private boolean hit;
-    private boolean hasShip;
-    private int x;
-    private int y;
+    private boolean hit; //boolean that states whether a ship on this coordinate has been hit
+    private boolean hasShip; //boolean that states whether a ship is on this coordinate
+    private int x; //the x value of the coordinate
+    private int y; //the y value of the coordinate
 
 
     /**
@@ -58,35 +58,59 @@ public class Coordinates {
         return this.hasShip;
     }
 
+    /**
+     * setHasShip - Sets a boolean to true on a specific
+     * coordinate of the board that has a portion of a ship.
+     * @param ship - boolean stating that there is a ship
+     */
     public void setHasShip(Boolean ship){this.hasShip = ship;}
 
 
+    /**
+     * setX - Sets the value of the x coord.
+     * @param x - value of x coord
+     */
     public void setX(int x) {
         this.x = x;
     }
 
+    /**
+     * setY - Sets the value of the y coord.
+     * @param y - the value of the y coord
+     */
     public void setY(int y) {
         this.y = y;
     }
 
     /**
-     * returns a boolean, if the coordinate has already been hit.
-     * @return bool of hit
+     * getHit - returns a boolean, if the coordinate has already been hit.
+     * @return boolean of hit
      */
-
-
-
     public boolean getHit() {
         return this.hit;
     }
 
+    /**
+     * getX - Returns the x value in this Coordinate.
+     * @return the value of the x instance variable
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     * getY - Returns the y value in this Coordinate.
+     * @return the value of the x instance variable.
+     */
     public int getY() {
         return y;
     }
+
+    /**
+     * getHasShip - returns the boolean value stating whether a ship
+     * is on this Coordinate.
+     * @return the hasShip instance variable
+     */
     public boolean getHasShip(){
         return this.hasShip;
     }
